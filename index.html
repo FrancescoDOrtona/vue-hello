@@ -5,13 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello Vue</title>
 </head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        background-color: lightsalmon;
+    }
+
+    .container{
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    img{
+        max-width: 100%;
+        border-radius: 15px;
+    }
+
+    .title{
+        text-align: center;
+        margin: 40px 0px;
+    }
+
+    .guesser{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 30px;
+        font-size: 28px;
+    }
+
+    #input-text{
+        border-radius: 999px;
+        padding: 12px;
+    }
+
+    .buttons{
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+</style>
+
 <body>
-    <div id="app">
-        <header>
+    <div class="container" id="app">
+        <header class="title">
             <h1>{{message}}</h1>
         </header>
         <section>
-            <img :src="image" alt="">
+            <div>
+                <img :src="image" alt="">
+            </div>
+            <div class="guesser">
+                <p>Guess the location on the image: {{ guessText }}</p>
+                <div class="buttons">
+                    <input id="input-text" type="text" v-model="guessText">
+                    <button id="input-text" @click="onClick">{{ counter }}</button>
+                    <button id="input-text" @click="onClickReset">Reset</button>
+                </div>
+            </div>
+            
         </section>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
