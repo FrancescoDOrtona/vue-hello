@@ -7,4 +7,3 @@ createApp({
         }
     }
 }).mount('#app')
-console.log(this)
